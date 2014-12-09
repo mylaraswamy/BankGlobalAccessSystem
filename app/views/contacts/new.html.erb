@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Bank Global Access System</title>
+<link href="home1.css.scss" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="img11">
+    <div id="img21">
+        <div id="title">
+            <h1><a href="#" target="_parent">
+                    <img src="templatemo_logo.png" alt="Bank Global Access System" />
+            </a></h1>
+        </div>
+    </div> 
+
+</div> 
+
+<div id="img31">
+      <div id="img41">
+         <div id="img51">
+         </div>
+         </div>
+</div> 
+
+<div id="img61">
+
+    <div id="img71">
+     <ul>
+            <li><%= link_to 'Home', home_index_path %><span></span></a></li>
+            <li><%= link_to 'Gallery',gallarys_path %><span></span></a></li>
+            <li><%= link_to 'AboutUs',abouts_path %><span></span></a></li>
+            <li><%= link_to 'ContactUs',new_contact_path %><span></span></a></li>
+            <li><%= link_to 'HelpLine',helps_path %><span></span></a></li>
+        </ul>      
+    
+    </div> 
+
+</div> 
+
+<div id="img81">
+<br>
+<div id="mine">
+<h1> Get in Touch With Us </h1>
+<% if flash[:error] %>
+  <div class="error"><%= flash[:error] %></div>
+  <% end %>
+<%= form_for Contact.new do |f| %>
+<fieldset id="user-details">
+  <p>
+  <%= f.label :name %><br>
+  <%= f.text_field :name,autofocus: true,autocomplete: "off" %>
+  </p>
+  <p>
+  <%= f.label :email %><br>
+  <%= f.text_field :email,autofocus: true,autocomplete: "off" %>
+  </p>
+  <p>
+  <%= f.label :phonenumber %><br>
+  <%= f.number_field :phonenumber,autofocus: true,autocomplete: "off" %>
+  </p>
+  <p>
+  <%= f.label :address %><br>
+  <%= f.text_field :address,autofocus: true,autocomplete: "off" %>
+  </p>
+  <p>
+  <p>
+  <%= f.label :message %><br>
+  <%= f.text_area :message,autofocus: true,autocomplete: "off" %>
+<p>
+  <%= f.submit "SendMessage !!", type: :submit %> 
+  <%= f.submit "Reset", type: :reset %>
+</p>
+</fieldset></div>
+<br>
+<br />
+
+</div> <!-- end of Content Design -->
+<div id="img911"></div>
+
+<div id="templatemo_footer">
+ <ul class="footer_menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li class="last_menu"><a href="#">Contact</a></li>
+        </ul>
+    
+        Copyright © 2014 <a href="#">Climb Education(Carmatec IT Solution)</a> | 
+        Designed by <a href="#" target="_parent">Mylaraswamy</a> | 
+        Validate <a href="#">ROR</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer">XHTML,CSS and JQuery</a>
+</div> <!-- end of footer -->
+
+</body>
+</html>
+<% end %>
+

@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>Bank Global Access System</title>
+<link href="comman.css.scss" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="mlogin.css.scss">
+
+<style type="text/css">
+table.gridtable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+}
+table.gridtable th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+}
+table.gridtable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+<div id="img1">
+    <div id="img2">
+        <div id="title">
+            <h1><a href="#" target="_parent">
+                    <img src="templatemo_logo.png" alt="Bank Global Access System" />
+            </a></h1>
+        </div>
+    </div> 
+
+</div> 
+
+<div id="img3">
+      <div id="img4">
+         <div id="img5">
+         </div>
+         </div>
+</div> 
+
+<div id="img6">
+
+    <div id="img7">
+    <h1> Displaying The Transaction Details </h1>
+    
+    </div> 
+
+</div> 
+
+<div id="img81">
+<br />
+
+<tr>
+<% if current_user.role_id == Role.find_by_name('Customer').id%>
+	<td><%= link_to 'New', new_transaction_path %></td>
+	<% end %>
+</tr>
+<table class ="gridtable">
+	<tr>
+	<th>S.No</th>
+	<th>GlobalAccessID</th>
+	<th>Partyindex</th>
+	<th>Fromaccount</th>
+	<th>Toaccount</th>
+	<th>Sendername</th>
+	<th>Receivername</th>
+	<th>Frombank</th>
+	<th>Tobank</th>
+	<th>Senderamount</th>
+	<th>Receiver Amount</th>
+	<th>Action</th>
+	<th colspan="2"></th>
+	</tr>
+<% @transactions.each do |transaction| %>
+	<tr>
+		<td><%= transaction.id %></td>
+		<td><%= transaction.globalaccessid %></td>
+		<td><%= transaction.partyindex %></td>
+		<td><%= transaction.fromaccountto %></td>
+		<td><%= transaction.toaccount %></td>
+		<td><%= transaction.sendername %></td>
+		<td><%= transaction.receivername %></td>
+		<td><%= transaction.frombank %></td>
+		<td><%= transaction.tobank %></td>
+		<td><%= transaction.senderamount %></td>
+		<td><%= transaction.receiveramount %></td>
+		<!-- <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td> -->
+		<td><%= link_to 'Delete', transaction_path(transaction), method: :delete, data:{ confirm: 'Are You sure?'} %></td>
+	</tr>
+	<% end %>
+</table>
+
+<br />
+<br />
+<br />
+<br />
+<br /><br />
+
+<br />
+<br /><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+</div> 
+<div id="img9"></div>
+
+<div id="templatemo_footer">
+  
+</div> 
+
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,156 @@
+<html>
+<head>
+<title>BANK GLOBAL ACCESS SYSTEM</title>
+<link href="transactions.css.scss" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+         .style1
+         {
+             width: 98%;
+             height: 3px;
+             margin-left: 5px;
+         }
+         .style2
+        {
+            width: 100%;
+            height: 432px;
+        }
+        .style3
+        {
+            height: 26px;
+        }
+        .style4
+        {
+            width: 239px;
+        }
+        .style5
+        {
+            height: 26px;
+            width: 239px;
+        }
+    </style>
+    </head>
+<body>
+   <div id="imgA1">
+  <div id="imgA2">
+    
+      <div id="title">
+            <h1><a href="http://www.bgas.com" target="_parent">
+              
+                  <img src="templatemo_logo.png" alt="Bank Global Access System" />
+                
+            </a></h1>
+        </div>
+        
+       
+    
+    </div> 
+
+</div> 
+
+<div id="imgA3">
+  
+    <div id="imgA4">
+    <div id="imgA5">
+    </div>
+    </div>
+</div>
+
+
+<div id="imgA6">
+
+  <div id="imgA7">
+    
+        <ul>
+             <li><%= link_to 'Transaction', new_transaction_path %><span></span></a></li>
+             <li><%= link_to 'AccountDetails', banks_path %><span></span></a></li>
+             <li><%= link_to 'CardDetails', banks_path %><span></span></a></li>
+             <li><%= link_to 'ChequeDetails', banks_path %><span></span></a></li>
+        </ul>
+    
+    </div>
+
+</div>
+
+<div id="imgA8">
+
+    <br />
+<br>
+<h3>
+<td>
+<h4><% if flash[:error] %>
+  <div class="error"><%= flash[:error] %></h4></div>
+  <% end %>
+<%= form_for @transaction do |f| %> 
+<% @transaction.errors.any? %>
+<ul>
+  <% @transaction.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+  </ul>
+</ul>
+<fieldset class="p">
+<legend>Transaction</legend>
+<br>
+  <p>
+  <%= f.label :globalaccessid %><br>
+  <%= f.text_field :globalaccessid, :placeholder => 'GID1001',autofocus: true,autocomplete: "off" %>
+  </p>
+  <p>
+  <%= f.label :partyindex %><br>
+  <%= f.text_field :partyindex, :placeholder => 'PID1001',autofocus: true,autocomplete: "off" %>
+  </p>
+  <p>
+  <%= f.label :fromaccountto %><br>
+  <%= f.number_field :fromaccountto, :placeholder => 'add your accountnum',autofocus: true,autocomplete: "off" %>
+  </p>
+    <p>
+  <%= f.label :toaccount %><br>
+  <%= f.number_field :toaccount, :placeholder => 'add accountnum',autofocus: true,autocomplete: "off" %>
+  </p>
+  <p>
+  <%= f.label :sendername %><br>
+  <%= f.text_field :sendername, :placeholder => 'username',autofocus: true,autocomplete: "off" %>
+  </p>
+  <p>
+  <%= f.label :receivername %><br>
+  <%= f.text_field :receivername, :placeholder => 'username',autofocus: true,autocomplete: "off" %>
+  </p>
+  <p>
+  <%= f.label :frombank %><br>
+  <%= f.text_field :frombank, :placeholder => 'bankname',autofocus: true,autocomplete: "off" %>
+  </p>
+  <p>
+  <%= f.label :tobank %><br>
+  <%= f.text_field :tobank, :placeholder => 'bankname',autofocus: true,autocomplete: "off" %>
+  </p>
+    <p>
+  <%= f.label :senderamount %><br>
+  <%= f.number_field :senderamount, :placeholder => 'enter amount',autofocus: true,autocomplete: "off" %>
+  </p>
+  <p>
+  <%= f.label :receiveramount %><br>
+  <%= f.number_field :receiveramount, :placeholder => 'enter amount',autofocus: true,autocomplete: "off" %>
+  </p>
+<p>
+  <%= f.submit "TransferAmount !!", type: :submit %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= f.submit "Reset", type: :reset %>
+  <br>
+  <br>
+</p></fieldset>
+
+<br>
+<br />
+
+</div>
+<% end %> <!-- end of Content Design -->
+<div id="imgA9"></div>
+
+</body>
+</html>
+
+<style>
+.p{
+  color: #66CDAA;
+  background-color: #ffffff;
+}
+</style>

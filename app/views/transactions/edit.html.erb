@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Bank Global Access System</title>
+<link href="comman.css.scss" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="mlogin.css.scss">
+
+<style type="text/css">
+table.gridtable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+}
+table.gridtable th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+}
+table.gridtable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+<div id="img1">
+    <div id="img2">
+        <div id="title">
+            <h1><a href="#" target="_parent">
+                    <img src="templatemo_logo.png" alt="Bank Global Access System" />
+            </a></h1>
+        </div>
+    </div> 
+
+</div>
+<div id="img3">
+      <div id="img4">
+         <div id="img5">
+         </div>
+         </div>
+</div> 
+
+<div id="img6">
+
+    <div id="img7">
+    <h1> Editing Transaction Details </h1>
+    
+    </div> 
+
+</div> 
+
+<div id="img81">
+<h2> Transaction Form </h2>
+<% if flash[:error] %>
+	<div class="error"><%= flash[:error] %></div>
+	<% end %>
+<%= form_for Transaction.new do |f| %>
+<fieldset>	
+<legend>Change Detail</legend>
+	<p>
+	<%= f.label :globalaccessid %><br>
+	<%= f.text_field :globalaccessid, :placeholder => 'GID1001',autofocus: true,autocomplete: "off" %>
+	</p>
+	<p>
+	<%= f.label :fromaccountto %><br>
+	<%= f.number_field :fromaccountto, :placeholder => 'add your accountnum',autofocus: true,autocomplete: "off" %>
+	</p>
+		<p>
+	<%= f.label :toaccount %><br>
+	<%= f.number_field :toaccount, :placeholder => 'add accountnum',autofocus: true,autocomplete: "off" %>
+	</p>
+	<p>
+	<%= f.label :sendername %><br>
+	<%= f.text_field :sendername, :placeholder => 'username',autofocus: true,autocomplete: "off" %>
+	</p>
+	<p>
+	<%= f.label :receivername %><br>
+	<%= f.text_field :receivername, :placeholder => 'username',autofocus: true,autocomplete: "off" %>
+	</p>
+	<p>
+	<%= f.label :frombank %><br>
+	<%= f.text_field :frombank, :placeholder => 'bankname',autofocus: true,autocomplete: "off" %>
+	</p>
+	<p>
+	<%= f.label :tobank %><br>
+	<%= f.text_field :tobank, :placeholder => 'bankname',autofocus: true,autocomplete: "off" %>
+	</p>
+	<p>
+	<%= f.label :senderamount %><br>
+	<%= f.number_field :receiveramount, :placeholder => 'enter amount',autofocus: true,autocomplete: "off" %>
+	</p>
+	<p>
+	<%= f.label :partyindex %><br>
+	<%= f.text_field :partyindex, :placeholder => 'PID1001',autofocus: true,autocomplete: "off" %>
+	</p>
+	</fieldset>
+<fieldset>
+<p>
+	<%= f.submit "Update !!", type: :submit %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<%= f.submit "Reset", type: :reset %>
+</p>
+</fieldset>
+</div> 
+<div id="img9"></div>
+
+<div id="templatemo_footer">
+  
+</div> 
+
+</body>
+</html
+<% end %>

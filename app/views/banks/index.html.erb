@@ -1,0 +1,119 @@
+<h1> Displaying the Bank details </h1><br><br>
+<tr>
+<% if current_user.role_id == Role.find_by_name('Manager').id%>
+<div id="rr1">
+	<% end %>
+	<br>
+		
+</tr>
+<table class ="gridtable">
+	<tr>
+	<th>S.No</th><br>
+	<th>Username</th>
+	<th>Fathername</th>
+	<th>Designation</th>
+	<th>Birthday</th>
+	<th>Gender</th>
+	<th>Address</th>
+	<th>Country</th>
+	<th>State</th>
+	<th>Pincode</th>
+	<th>Email</th>
+	<th>Phonenumber</th>
+	<th>Globalaccessid</th>
+	<th>Partyindex</th>
+	<th>Bankname</th>
+	<th>Accountnumber</th>
+	<th>Accounttype</th>
+	<th>Accountavailable</th>
+	<th>Accountlocation</th>
+	<th>Accountissued</th>
+	<th>Openbalance</th>
+	<th>Currentbalance</th>
+	<th>Balancelimit</th>
+	<th>Cardnumber</th>
+	<th>Cardtype</th>
+	<th>Cardavailable</th>
+	<th>Cardlocation</th>
+	<th>Secretcode</th>
+	<th>Cardissueddate</th>
+	<th>Cardexpiredate</th>
+	<th>Cardlimit</th>
+	<th>Chequenumber</th>
+	<th>Chequeavailable</th>
+	<th>Chequelocation</th>
+	<th>Chequeissueddate</th>
+	<th>Chequeexpiredate</th>
+	<th>Chequelimit</th>
+	<th>Actions</th>
+	<th colspan="3"></th>
+	</tr>
+		<% @banks.each do |bank| %>
+	<tr>
+		<td><%= bank.id %></td>
+		<td><%= bank.username %></td>
+		<td><%= bank.fathername %></td>
+		<td><%= bank.designation %></td>
+		<td><%= bank.birthday %></td>
+		<td><%= bank.gender %></td>
+		<td><%= bank.address %></td>
+		<td><%= bank.country %></td>
+		<td><%= bank.state %></td>
+		<td><%= bank.pincode %></td>
+		<td><%= bank.email %></td>
+		<td><%= bank.phonenumber %></td>
+		<td><%= bank.globalaccessid %></td>
+		<td><%= bank.partyindex %></td>
+		<td><%= bank.bankname %></td>
+		<td><%= bank.accountnumber %></td>
+		<td><%= bank.accounttype %></td>
+		<td><%= bank.accountavailable %></td>
+		<td><%= bank.accountlocation %></td>
+		<td><%= bank.accountissued %></td>
+		<td><%= bank.openbalance %></td>
+		<td><%= bank.currentbalance %></td>
+		<td><%= bank.balancelimit %></td>
+		<td><%= bank.cardnumber %></td>
+		<td><%= bank.cardtype %></td>
+		<td><%= bank.cardavailable %></td>
+		<td><%= bank.cardlocation %></td>
+		<td><%= bank.secretcode %></td>
+		<td><%= bank.cardissueddate %></td>
+		<td><%= bank.cardexpiredate %></td>
+		<td><%= bank.cardlimit %></td>
+		<td><%= bank.chequenumber %></td>
+		<td><%= bank.chequeavailable %></td>
+		<td><%= bank.chequelocation %></td>
+		<td><%= bank.chequeissueddate %></td>
+		<td><%= bank.chequeexpiredate %></td>
+		<td><%= bank.chequelimit %></td>
+		<td><%= link_to 'Edit', edit_bank_path(bank) %></td>
+		<td><%= link_to 'Delete', bank_path(bank), method: :delete, data:{ confirm: 'Are You sure?'} %></td>
+	</tr>
+	<% end %>
+</table>
+<style type="text/css">
+table.gridtable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+}
+table.gridtable th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+}
+table.gridtable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
+
+</style>

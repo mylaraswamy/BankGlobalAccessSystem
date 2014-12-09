@@ -1,0 +1,102 @@
+
+<html>
+<head>
+<title>Bank Global Access System</title>
+<link href="home1.css.scss" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="img11">
+    <div id="img21">
+        <div id="title">
+            <h1><a href="#" target="_parent">
+                    <img src="templatemo_logo.png" alt="Bank Global Access System" />
+            </a></h1>
+        </div>
+    </div> 
+
+</div> 
+
+<div id="img31">
+      <div id="img41">
+         <div id="img51">
+         </div>
+         </div>
+</div> 
+
+<div id="img61">
+
+    <div id="img71">
+     <h1>Displaying Contact Details</h1>   
+    
+    </div> 
+
+</div> 
+
+<div id="img81">
+<br>
+<br>
+<br>
+<h1>Contact Details</h1>
+<br>
+<br>
+<br>
+<table class="gridtable">
+	<tr>
+	<th>Name</th>
+	<th>Email</th>
+	<th>Phonenumber</th>
+	<th>Address</th>
+	<th>Message</th>
+	<th>Action</th>
+	<th colspan="2"></th>
+	</tr>
+<% @contacts.each do |contact| %>
+	<tr>
+		<td><%= contact.name %></td>
+		<td><%= contact.email %></td>
+		<td><%= contact.phonenumber %></td>
+		<td><%= contact.address %></td>
+		<td><%= contact.message %></td>
+		<td><%= link_to 'Delete', contact_path(contact), method: :delete, data:{ confirm: 'Are You sure?'} %></td>
+	</tr>
+	<% end %>
+</table>
+<br>
+<br>
+<br>
+</div> <!-- end of Content Design -->
+<div id="img911"></div>
+
+<div id="templatemo_footer">
+</div>
+</div> <!-- end of footer -->
+
+</body>
+</html>
+
+
+<style type="text/css">
+table.gridtable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+}
+table.gridtable th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+}
+table.gridtable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
+
+</style>

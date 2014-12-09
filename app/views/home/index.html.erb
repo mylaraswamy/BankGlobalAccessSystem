@@ -1,0 +1,152 @@
+<%
+ if user_signed_in? 
+    if is_customer?
+        rolename = 'Customer'
+    elsif is_manager?
+        rolename = 'Manager'
+    elsif is_systemmanager?
+        rolename = 'System Manger'
+    end
+ end
+%>
+<html>
+<head>
+<title>Bank Global Access System</title>
+<link href="home2.css.scss" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="imgB11">
+    <div id="imgB21">
+        <div id="title">
+            <h1><a href="#" target="_parent">
+                    <img src="templatemo_logo.png" alt="Bank Global Access System" />
+            </a></h1>
+        </div>
+    </div> 
+
+</div> <!-- end of above part -->
+
+<div id="imgB31">
+      <div id="imgB41">
+         <div id="imgB51">
+         </div>
+         </div>
+</div> <!-- end of images part -->
+
+<div id="imgB61">
+    <div id="imgB71">
+        <ul>
+            <li><%= link_to 'Home', home_index_path %><span></span></a></li>
+            <li><%= link_to 'Gallery',gallarys_path %><span></span></a></li>
+            <li><%= link_to 'AboutUs',abouts_path %><span></span></a></li>
+            <li><%= link_to 'ContactUs',new_contact_path %><span></span></a></li>
+            <li><%= link_to 'HelpLine',helps_path %><span></span></a></li>
+        </ul>       
+    
+    </div> <!-- end of templatemo_menu -->
+
+</div> <!-- end of templatemo_menu_wrapper -->
+
+<div id="imgB81">
+
+    <div class="section_w940">
+    
+        <div class="product_box margin_r_20">
+            <h2>Promote Our Bank</h2>
+            <p>International banking, this comes on greater demand for conllateral assets through increased reliance by statistics on payment,clearing and settlement.. </p>
+            <div class="button_02"><a href="#">Read more</a></div>
+            
+            <div class="cleaner"></div>
+        </div>
+        
+        <div class="product_box margin_r_20">
+            <h2>Bank Website Analytics</h2>
+            <p>To assess how leading banks in india are meeting global best practices..Our analysis shows that access to retail banking deposits us today the biggest driver of ratail...</p>
+            <div class="button_02"><a href="#">Read more</a></div>  
+            
+            <div class="cleaner"></div>          
+        </div>
+        
+        <div class="product_box">
+            <h2>Online Banking</h2>
+            <p>Induslnd Bank's internet Banking is secure,quick and easy to use control your account preferences secure for transaction and we can access bank details through globally...</p>
+            <div class="button_02"><a href="#">Read more</a></div>     
+                   
+            <div class="cleaner"></div>
+        </div>
+    
+        <div class="cleaner"></div>
+    </div>
+    
+    <div class="cleaner_h30"></div>
+    
+   <left> <div class="section_w940">
+    
+       <left> <div class="section_w450 margin_r_40">
+            
+            <h2>Latest Blog Posts</h2>
+            
+           <left> <div class="news_box">
+                <a href="#">Download the web browser to access proper banking websites </a>
+                <p class="post_info">Posted in <a href="#">News</a> by <a href="#">Admin</a> on <strong>Dec 04, 2014</strong></p>
+          </div>
+            
+            <div class="news_box">
+                <a href="#">Online bank review on best banks and saving rates</a>
+                <p class="post_info">Posted in <a href="#">News</a> by <a href="#">Admin</a> on <strong>Nov 30, 2014</strong></p>
+          </div>
+            
+            <div class="news_box">
+                <a href="#">GSM or CDMA GSM-Global system for mobile communication</a>
+              <p class="post_info">Posted in <a href="#">News</a> by <a href="#">Admin</a> on <strong>Nov 18, 2014</strong></p>
+            </div>
+            
+            <div class="news_box">
+                <a href="#">Get the best bank with our bank rating and bank reviews</a>
+              <p class="post_info">Posted in <a href="#">Design</a> by <a href="#">Admin</a> on <strong>Nov 10, 2014</strong></p>
+            </div></left>
+            
+      </div></left>
+        
+        <div class="section_w450">
+        
+            <h2 id="m" align="center">Click Here To Login !!!</h2>
+            <form>
+                <fieldset id="my">
+                <div id="ra"><br>
+                <%= link_to 'Customer Login', new_user_session_path %><br><br><br>
+                <%= link_to 'Manager Login', new_user_session_path %><br><br><br>
+                <%= link_to 'System Manager Login', new_user_session_path %><b>
+                </div>
+                </fieldset>
+            </form>
+            
+            <p></p></div>
+
+            
+            
+        </div>
+    
+        <div class="cleaner"></div>
+    </div>
+
+</div> <!-- end of Content Design -->
+<div id="imgB91"></div>
+
+<div id="templatemo_footer">
+  
+        <ul class="footer_menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li class="last_menu"><a href="#">Contact</a></li>
+        </ul>
+    
+        Copyright © 2014 <a href="#">Climb Education(Carmatec IT Solution)</a> | 
+        Designed by <a href="#" target="_parent">Mylaraswamy</a> | 
+        Validate <a href="#">ROR</a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer">XHTML,CSS and JQuery</a>
+</div> <!-- end of footer -->
+
+</body>
+</html>

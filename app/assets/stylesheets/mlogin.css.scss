@@ -1,0 +1,89 @@
+#login {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2),  
+                0 1px 1px rgba(0, 0, 0, .2),
+                0 3px 0 #fff,
+                0 4px 0 rgba(0, 0, 0, .2),
+                0 6px 0 #fff,  
+                0 7px 0 rgba(0, 0, 0, .2);
+                background-color: #778899;
+    margin: 0 auto;
+    
+    background: url(templatemo_content_middle.jpg) repeat-y center top;
+}
+#login {
+    position: absolute;
+    z-index: 0;
+    padding: 0px 0px 0px 10px;
+    width: 350px;
+}
+#login2 {
+    font-weight: bold;
+    width: 250px;
+    margin: 2 bold;
+    color: #66CDAA;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif bold;
+    font-size: 16px;
+    padding: 0px 0px 0px 50px;
+}
+#login3 {
+font-weight: bold;
+    width: 250px;
+    margin: 2 bold;
+    text-align: center;
+    color: #66CDAA;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif bold;
+    font-size: 24px;
+
+    padding: 0px 0px 0px 50px;
+}
+
+#login:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border: 1px dashed #ccc;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    box-shadow: 0 0 0 1px #fff;
+}
+h1 {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);
+    text-transform: uppercase;
+    text-align: center;
+    color: #666;
+    margin: 0 0 30px 0;
+    letter-spacing: 4px;
+    font: normal 26px/1 Verdana, Helvetica;
+    position: relative;
+}
+
+h1:after, 
+h1:before {
+    background-color: #777;
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 15px;
+    width: 120px;   
+}
+
+h1:after {      
+    right: 0;
+}
+
+h1:before {
+    background-image: linear-gradient(right, #777, #fff);
+    left: 0;
+}
+#inputs{
+    background-color: #F5F5F5;
+}
+#actions{
+    background-color: #FAF0E6;
+    font-size: 20px
+}
+#submit{
+    font-size: 20px;
+}

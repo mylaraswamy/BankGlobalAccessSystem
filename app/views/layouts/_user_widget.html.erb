@@ -1,0 +1,24 @@
+<div id="rr">
+<% if user_signed_in? %>
+  <p>Welcome <%= current_user.email %></p></div>
+  <h1>Click To LogOut</h1>
+  <br>
+  <div id="rr1"><br><br><br>
+  <%= link_to 'Logged In [click to logout]', destroy_user_session_path, :method => :delete %>
+  <div id="rr"><br><br>
+  <h1> Current User</h1><br><br>
+  <% if is_customer?%>
+     <%=link_to 'CUSTOMER', new_transaction_path%>
+     <% elsif is_manager?%>
+     <%=link_to 'Manager', new_bank_path %>
+
+  <% elsif is_systemmanager?%>
+      <%=link_to 'System Manager', sysmanagers_path %>
+   <%end%></div>
+<% else %>
+ <!-- <p>Click Here TO Login</p>
+  <%= link_to 'Login', new_user_session_path %>  -->
+<% end %>
+
+
+

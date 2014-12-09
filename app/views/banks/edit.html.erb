@@ -1,0 +1,244 @@
+<html>
+<head>
+    <title>Bank Application Details </title>
+    <link rel="stylesheet" type="text/css" href="acc.css.scss" media="screnn">
+    <script type="text/javascript" src="sliding.form.js"></script>
+</head>
+<style type="text/css">
+    span.reference{
+            position:fixed;
+            left:5px;
+            top:5px;
+            font-size:10px;
+            text-shadow:1px 1px 1px #fff;
+        }
+        span.reference a{
+            color:#555;
+            text-decoration:none;
+            text-transform:uppercase;
+        }
+        span.reference a:hover{
+            color:#000;
+            
+        }
+        h1{
+            color:#ccc;
+            font-size:36px;
+            text-shadow:1px 1px 1px #fff;
+            padding:20px;
+        }
+</style>
+<body>
+<div id="content">
+<h1>Bank Details Form</h1>
+<div id="wrapper">
+<div id="steps">
+<% if flash[:error] %>
+    <div class="error"><%= flash[:error] %></div>
+    <% end %>
+<%= form_for @bank do |f| %>
+<fieldset class="step">
+    <legend>Personal Details</legend>
+    <p>
+    <%= f.label :username %>
+    <%= f.text_field :username, :placeholder => 'your name',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :fathername %>
+    <%= f.text_field :fathername, :placeholder => 'fathername',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :designation %>
+    <%= f.text_field :designation, :placeholder => 'your designation',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :birthday %>
+    <%= f.date_select :birthday, :start_year => 1980%>
+    </p>
+    <p>
+    <%= f.label :gender %>
+    <%= f.radio_button :gender, 'Male' %> Male
+    <%= f.radio_button :gender, 'FeMale' %>FeMale
+    </p>
+    <p>
+    <%= f.label :address %>
+    <%= f.text_area :address,:placeholder => 'permant address',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :country %>
+    <%= f.text_field :country, :placeholder => 'your country',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :state %>
+    <%= f.text_field :state, :placeholder => 'your state',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :pincode %>
+    <%= f.text_field :pincode, :placeholder => 'pincode',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :email %>
+    <%= f.email_field :email, :placeholder => 'example@gmail.com',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :phonenumber %>
+    <%= f.number_field :phonenumber, :placeholder => '+91-XXXXXXXXXX',autofocus: true,autocomplete: "off" %>
+    </p>
+</fieldset>
+<fieldset class="step">
+    <legend>Account Details</legend>    
+    <p>
+    <%= f.label :globalaccessid %>
+    <%= f.text_field :globalaccessid, :placeholder => 'GID1001',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :partyindex %>
+    <%= f.text_field :partyindex, :placeholder => 'PID1001',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :bankname %>
+    <%= f.text_field :bankname, :placeholder => 'your bankname',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :accountnumber %>
+    <%= f.number_field :accountnumber, :placeholder => 'accountnumber',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :accounttype %>
+    <%= f.radio_button :accounttype, 'Current Account' %> Current
+    <%= f.radio_button :accounttype, 'Saving Account' %> Saving 
+    </p>
+    <p>
+    <%= f.label :accountavailable %>
+    <%= f.radio_button :accountavailable, 'Yes' %> Yes
+    <%= f.radio_button :accountavailable, 'No' %> No
+    </p>
+    <p>
+    <%= f.label :accountlocation %>
+    <%= f.text_field :accountlocation, :placeholder => 'your accountlocation',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :secretcode %>
+    <%= f.password_field :secretcode, :placeholder => 'add secretnumber',autofocus: true,autocomplete: "off"  %>
+    </p>
+    <p>
+    <%= f.label :openbalance %>
+    <%= f.number_field :openbalance, :placeholder => 'your amount',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :currentbalance %>
+    <%= f.number_field :currentbalance, :placeholder => 'your currentbalance',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :accountissued %>
+    <%= f.radio_button :accountissued, 'Yes' %> Yes
+    <%= f.radio_button :accountissued, 'No' %> No
+    </p>
+    <p>
+    <%= f.label :balancelimit %>
+    <%= f.number_field :balancelimit, :placeholder => 'your limitbalace',autofocus: true,autocomplete: "off" %>
+    </p>
+</fieldset>
+<fieldset class="step">
+    <legend>Card Details</legend>
+    <p>
+    <%= f.label :cardnumber %>
+    <%= f.number_field :cardnumber, :placeholder => 'enter cardnumber',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :cardtype %>
+    <%= f.text_field :cardtype, :placeholder => 'your cardtype',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :cardavailable %>
+    <%= f.radio_button :cardavailable, 'Yes' %> Yes
+    <%= f.radio_button :cardavailable, 'No' %> No
+    </p>
+    <p>
+    <%= f.label :cardlocation %>
+    <%= f.text_field :cardlocation, :placeholder => 'your cardlocation',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :secretcode %>
+    <%= f.password_field :secretcode, :placeholder => 'add secretnumber',autofocus: true,autocomplete: "off"  %>
+    </p>
+    <p>
+    <%= f.label :cardissueddate %>
+    <%= f.date_select :cardissueddate, :start_year => 1980%>
+    </p>
+    <p>
+    <%= f.label :cardexpiredate %>
+    <%= f.date_select :cardexpiredate, :start_year => 1980%>
+    </p>
+    <p>
+    <%= f.label :cardlimit %>
+    <%= f.number_field :cardlimit, :placeholder => 'your cardlimit',autofocus: true,autocomplete: "off" %>
+    </p>
+</fieldset>
+<fieldset class="step">
+    <legend>Cheque Details</legend>
+    <p>
+    <%= f.label :chequenumber %>
+    <%= f.number_field :chequenumber, :placeholder => 'chequenumber',autofocus: true,autocomplete: "off" %>
+    </p>
+    <p>
+    <%= f.label :chequeavailable %>
+    <%= f.radio_button :chequeavailable, 'Yes' %> Yes
+    <%= f.radio_button :chequeavailable, 'No' %> No
+    </p>
+    <p>
+    <%= f.label :chequelocation %>
+    <%= f.text_field :chequelocation, :placeholder => 'chequelocation',autofocus: true,autocomplete: "off" %>
+    </p>
+     <p>
+    <%= f.label :chequeissueddate %>
+    <%= f.date_select :chequeissueddate, :start_year => 1980%>
+    </p>
+     <p>
+    <%= f.label :chequeexpiredate %>
+    <%= f.date_select :chequeexpiredate, :start_year => 1980%>
+    </p>
+    <p>
+    <%= f.label :chequelimit %>
+    <%= f.number_field :chequelimit, :placeholder => 'your cardlimit',autofocus: true,autocomplete: "off" %>
+    </p>
+</fieldset>
+<fieldset class="step">
+<legend>Confirm</legend>
+                    <p>
+                                Everything in the form was correctly filled 
+                                if all the steps have a green checkmark icon.
+                                A red checkmark icon indicates that some field 
+                                is missing or filled out with invalid data. In this
+                                last step the user can confirm the submission of
+                                the form.
+                    </p>
+                    <div align="center">
+<p id="registerButton">
+    <%= f.submit "Update !!", type: :submit  %>
+     <%= f.submit "Reset", type: :reset %></p>
+</fieldset></form></div></div>
+<div id="navigation" style="display:none;">
+                    <ul>
+                        <li class="selected">
+                            <a href="#">Personal</a>
+                        </li>
+                        <li>
+                            <a href="#">Account</a>
+                        </li>
+                        <li>
+                            <a href="#">Card</a>
+                        </li>
+                        <li>
+                            <a href="#">Cheque Details</a>
+                        </li>
+                        <li>
+                            <a href="#">Confirm</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<% end %>
+</body>
+</html>
